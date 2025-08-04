@@ -2,24 +2,6 @@
 
 This document outlines our development standards, workflow, and best practices at Kathalysth.
 
-## 🛠️ Technology Stack
-
-### Frontend (Next.js)
-- **Framework**: Next.js with TypeScript
-- **Styling**: Tailwind CSS + shadcn/ui components
-- **Animations**: Framer Motion
-- **File Naming**: kebab-case
-
-### Backend (Node.js)
-- **Runtime**: Node.js with Express
-- **Language**: TypeScript
-- **File Naming**: kebab-case
-
-### Mobile (React Native)
-- **Framework**: React Native with Expo
-- **Language**: TypeScript
-- **File Naming**: kebab-case
-
 ## 📁 Project Structure
 
 ### Standard Folder Structure
