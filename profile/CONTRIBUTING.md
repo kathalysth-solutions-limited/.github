@@ -232,9 +232,6 @@ All checks must pass before merge:
 * Fix verified in staging environment
 
 # 🚨 Important Notes
-* **No TODO comments**: All code must be production-ready
-* **No placeholder implementations**: Complete all functionality
-* **Route configuration**: Always ask about routing structure before implementing new routes
 * **Never assume**: Ask questions if requirements are unclear
 
 # 📞 Getting Help
