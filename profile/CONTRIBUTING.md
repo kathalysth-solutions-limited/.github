@@ -23,6 +23,7 @@ This document outlines our development standards, workflow, and best practices a
 ## 📁 Project Structure
 
 ### Standard Folder Structure
+
 src/
 ├── components/
 │   ├── ui/              # shadcn/ui components
@@ -32,7 +33,7 @@ src/
 ├── lib/                 # Utility functions
 ├── types/               # TypeScript type definitions
 ├── constants/           # Application constants
-└── tests/               # Test files
+└── tests/           # Test files
 
 ## 🔄 Git Workflow (GitFlow)
 
@@ -51,6 +52,7 @@ release/v1.2.0
 ## 📝 Commit Standards
 
 ### Conventional Commits Format
+
 <type>(<scope>): <description>
 [optional body]
 [optional footer(s)]
@@ -70,19 +72,20 @@ feat(auth): add user login functionality
 fix(payment): resolve checkout validation error
 docs(readme): update installation instructions
 test(user-service): add unit tests for user creation
-🧪 Testing Requirements
-Coverage Requirements
+```
 
-Minimum Coverage: 80%
-Critical Functions: 95% coverage required
+# 🧪 Testing Requirements
 
-Testing Strategy
+## Coverage Requirements
+* **Minimum Coverage**: 80%
+* **Critical Functions**: 95% coverage required
 
-Unit Tests: All utility functions and business logic
-Integration Tests: API endpoints and component interactions
-E2E Tests: Critical user workflows
+## Testing Strategy
+* **Unit Tests**: All utility functions and business logic
+* **Integration Tests**: API endpoints and component interactions  
+* **E2E Tests**: Critical user workflows
 
-Test File Naming
+## Test File Naming
 src/
 ├── components/
 │   ├── user-profile.tsx
@@ -92,9 +95,13 @@ src/
     ├── auth-utils.ts
     └── __tests__/
         └── auth-utils.test.ts
-🔍 Code Standards
-ESLint Configuration
-json{
+
+# 🔍 Code Standards
+
+## ESLint Configuration
+
+```javascript
+{
   "extends": [
     "@next/eslint-config-next",
     "eslint:recommended",
@@ -107,31 +114,36 @@ json{
     "no-var": "error"
   }
 }
-Prettier Configuration
-json{
+```
+## Prettier Configuration
+```javascript
+{
   "semi": true,
   "trailingComma": "es5",
   "singleQuote": true,
   "printWidth": 80,
   "tabWidth": 2
 }
-TypeScript Standards
 
-Use strict TypeScript configuration
-Define interfaces for all data structures
-Use proper typing for function parameters and return values
-Avoid any type - use unknown or proper types
+```
+## TypeScript Standards
+* Use strict TypeScript configuration
+* Define interfaces for all data structures
+* Use proper typing for function parameters and return values
+* Avoid `any` type - use `unknown` or proper types
 
-🎨 UI/UX Standards
-Design Principles
+# 🎨 UI/UX Standards
 
-Mobile-first: Design for mobile, enhance for desktop
-Accessibility: Follow WCAG 2.1 guidelines
-Performance: Optimize for Core Web Vitals
-Consistency: Use shadcn/ui components consistently
+## Design Principles
+* **Mobile-first**: Design for mobile, enhance for desktop
+* **Accessibility**: Follow WCAG 2.1 guidelines
+* **Performance**: Optimize for Core Web Vitals
+* **Consistency**: Use shadcn/ui components consistently
 
-Responsive Breakpoints
-css/* Mobile */
+## Responsive Breakpoints
+
+```css
+/* Mobile */
 @media (max-width: 768px) { }
 
 /* Tablet */
@@ -139,98 +151,97 @@ css/* Mobile */
 
 /* Desktop */
 @media (min-width: 1025px) { }
-Animation Guidelines
+```
 
-Use Framer Motion for all animations
-Keep animations under 300ms for micro-interactions
-Provide prefers-reduced-motion alternatives
+## Animation Guidelines
+* Use Framer Motion for all animations
+* Keep animations under 300ms for micro-interactions
+* Provide `prefers-reduced-motion` alternatives
 
-🔄 Development Workflow
-1. Starting New Work
-bash# Switch to develop branch
+# 🔄 Development Workflow
+
+## 1. Starting New Work
+
+```bash
+# Switch to develop branch
 git checkout develop
 git pull origin develop
 
 # Create feature branch
 git checkout -b feature/your-feature-name
-2. Development Process
+```
 
-Write tests first (TDD approach recommended)
-Implement functionality
-Ensure all tests pass
-Run linting and formatting
+## 2. Development Process
+* Write tests first (TDD approach recommended)
+* Implement functionality
+* Ensure all tests pass
+* Run linting and formatting
 
-3. Code Review Process
+## 3. Code Review Process
+* Push branch to GitHub
+* Create Pull Request to `develop`
+* Ensure CI/CD checks pass
+* Request review from tech leads
+* Address feedback
+* Merge after approval
 
-Push branch to GitHub
-Create Pull Request to develop
-Ensure CI/CD checks pass
-Request review from tech leads
-Address feedback
-Merge after approval
+## 4. PR Requirements
+* All tests passing
+* Code coverage meets requirements
+* ESLint/Prettier checks pass
+* TypeScript compilation successful
+* Descriptive PR title and description
+* Screenshots for UI changes
 
-4. PR Requirements
+# 🚀 CI/CD Pipeline
 
-✅ All tests passing
-✅ Code coverage meets requirements
-✅ ESLint/Prettier checks pass
-✅ TypeScript compilation successful
-✅ Descriptive PR title and description
-✅ Screenshots for UI changes
-
-🚀 CI/CD Pipeline
-GitHub Actions Workflow
+## GitHub Actions Workflow
 Our pipeline automatically:
+* Runs tests and linting
+* Checks TypeScript compilation
+* Verifies code coverage
+* Builds the application
+* Deploys to staging (develop branch)
+* Deploys to production (main branch)
 
-Runs tests and linting
-Checks TypeScript compilation
-Verifies code coverage
-Builds the application
-Deploys to staging (develop branch)
-Deploys to production (main branch)
-
-Pipeline Requirements
+## Pipeline Requirements
 All checks must pass before merge:
+* Unit tests
+* Integration tests
+* ESLint checks
+* TypeScript compilation
+* Security scans
 
-Unit tests
-Integration tests
-ESLint checks
-TypeScript compilation
-Security scans
+# 📋 Definition of Done
 
-📋 Definition of Done
-For Features
+## For Features
+* Code implemented according to requirements
+* Unit tests written and passing
+* Integration tests added where applicable
+* Code reviewed and approved
+* Documentation updated
+* Responsive design implemented
+* Accessibility requirements met
+* Performance benchmarks met
 
-✅ Code implemented according to requirements
-✅ Unit tests written and passing
-✅ Integration tests added where applicable
-✅ Code reviewed and approved
-✅ Documentation updated
-✅ Responsive design implemented
-✅ Accessibility requirements met
-✅ Performance benchmarks met
+## For Bug Fixes
+* Root cause identified
+* Fix implemented
+* Test added to prevent regression
+* Code reviewed and approved
+* Fix verified in staging environment
 
-For Bug Fixes
+# 🚨 Important Notes
+* **No TODO comments**: All code must be production-ready
+* **No placeholder implementations**: Complete all functionality
+* **Route configuration**: Always ask about routing structure before implementing new routes
+* **Never assume**: Ask questions if requirements are unclear
 
-✅ Root cause identified
-✅ Fix implemented
-✅ Test added to prevent regression
-✅ Code reviewed and approved
-✅ Fix verified in staging environment
+# 📞 Getting Help
+* **Technical questions**: Ask tech leads in Slack
+* **Code review feedback**: Discuss in PR comments or Slack
+* **Architecture decisions**: Consult with Staff developers
+* **Process questions**: Check with tech leads
 
-🚨 Important Notes
+**Remember**: These guidelines ensure code quality, maintainability, and team collaboration. When in doubt, ask!
 
-No TODO comments: All code must be production-ready
-No placeholder implementations: Complete all functionality
-Route configuration: Always ask about routing structure before implementing new routes
-Never assume: Ask questions if requirements are unclear
-
-📞 Getting Help
-
-Technical questions: Ask tech leads in Slack
-Code review feedback: Discuss in PR comments or Slack
-Architecture decisions: Consult with Staff developers
-Process questions: Check with tech leads
-
-
-Remember: These guidelines ensure code quality, maintainability, and team collaboration. When in doubt, ask!
