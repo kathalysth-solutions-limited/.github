@@ -70,6 +70,7 @@ test(user-service): add unit tests for user creation
 * **E2E Tests**: Critical user workflows
 
 ## Test File Naming
+```javascript
 src/
 ├── components/
 │   ├── user-profile.tsx
@@ -79,6 +80,7 @@ src/
     ├── auth-utils.ts
     └── __tests__/
         └── auth-utils.test.ts
+```
 
 # 🔍 Code Standards
 
