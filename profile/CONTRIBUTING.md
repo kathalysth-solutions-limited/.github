@@ -6,6 +6,7 @@ This document outlines our development standards, workflow, and best practices a
 
 ### Standard Folder Structure
 
+```javascript
 src/
 ├── components/
 │   ├── ui/                    # shadcn/ui components
@@ -16,6 +17,7 @@ src/
 ├── types/                     # TypeScript type definitions
 ├── constants/                 # Application constants
 └── __tests__/                 # Test files
+```
 
 ## 🔄 Git Workflow (GitFlow)
 
