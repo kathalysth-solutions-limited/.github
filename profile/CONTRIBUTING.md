@@ -8,14 +8,14 @@ This document outlines our development standards, workflow, and best practices a
 
 src/
 ├── components/
-│   ├── ui/              # shadcn/ui components
-│   ├── common/          # Reusable components
-│   └── feature-name/    # Feature-specific components
-├── hooks/               # Custom React hooks
-├── lib/                 # Utility functions
-├── types/               # TypeScript type definitions
-├── constants/           # Application constants
-└── tests/           # Test files
+│   ├── ui/                    # shadcn/ui components
+│   ├── common/                # Reusable components
+│   └── feature-name/          # Feature-specific components
+├── hooks/                     # Custom React hooks
+├── lib/                       # Utility functions
+├── types/                     # TypeScript type definitions
+├── constants/                 # Application constants
+└── __tests__/                 # Test files
 
 ## 🔄 Git Workflow (GitFlow)
 
